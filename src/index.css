@@ -1,13 +1,402 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html{
+  font-size:62.5%;
 }
+
+
+.App {
+  min-height:100vh;
+  font-family: 'Space Mono', monospace;
+  padding: 2rem 3rem;
+  background-color: #F6F8FF;
+}
+
+
+/****HEADER****/
+
+.header{
+  display:flex;
+  justify-content: space-between;
+}
+
+
+.theme-box{
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+  cursor:pointer;
+}
+
+.moon{
+  width:1.5rem;
+  height:1.5rem;
+  
+}
+
+.title{
+  font-size:2.4rem;
+  font-weight:700;
+}
+
+.dark{
+  font-size:1.2rem;
+  color:#4B6A9B;
+  font-weight:700;
+  letter-spacing: 2px;
+}
+
+
+/**** SEARCH SECTION ****/
+.input-box{
+  position:relative;
+  margin-top:3rem;
+
+}
+
+.search-input{
+
+  height:5rem;
+  border-style:none;
+  padding-left: 3rem;
+  padding-right:12.5rem;
+  border-radius: 8px;
+  
+  
+}
+
+.search-icon,.search-btn{
+  position:absolute;
+}
+
+.search-icon{
+  width:2rem;
+  height:2rem;
+  top:30%;
+  left:2%;
+  
+}
+
+::placeholder{
+  font-family:'Space Mono', monospace;
+  color: rgba(75, 106, 155, 1);
+  font-size:1.1rem;
+  
+}
+
+.search-btn{
+  border-style: none;
+  width:8rem;
+  height:4rem;
+  border-radius:8px;
+  background-color: rgba(0, 121, 255, 1);
+  color:rgba(255, 255, 255, 1);
+  font-family: 'Space Mono', monospace;
+
+   left:70%;
+   top:10%;
+   cursor:pointer;
+}
+
+
+/******IMAGE SECTION *****/
+.profile-box{
+  display:flex;
+  gap:2rem;
+  margin-top:2rem;
+  background-color: white;
+  padding:3rem 2rem;
+
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.username{
+ text-align: left;
+}
+
+h2{
+  margin-bottom:0.2rem;
+}
+
+.user-id{
+  margin-bottom:0.5rem;
+  color:rgba(0, 121, 255, 1);
+}
+
+.join-date{
+  color: rgba(105, 124, 154, 1);
+  font-size:1.2rem;
+
+}
+
+.bio-box{
+  padding:0 2.5rem;
+  text-align: left;
+  font-size:1.2rem;
+  background-color: white;
+  color:#4B6A9B;
+  padding-bottom:2rem;
+}
+
+
+
+/*********INFO SECTION *********/
+.wrapper{
+  background-color:white;
+  padding-bottom:2rem;
+}
+
+.info-box{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  row-gap:0.5rem;
+  border-radius:8px;
+  margin:0 2rem;
+  padding:2rem 2rem;
+  background-color: rgba(246, 248, 255, 1);
+
+}
+
+.repo, .followers, .following{
+  color:rgba(75, 106, 155, 1);
+  align-self: center;
+  justify-self: center;
+}
+
+.repo-nmb, .followers-nmb, .following-nmb{
+  font-size:1.4rem;
+  font-weight:bold;
+  align-self: center;
+  justify-self: center;
+}
+
+/*******DETAILS-SECTION*******/
+.details-box{
+  display:grid;
+  grid-template-columns: 3rem 1fr;
+  padding-left:1rem;
+  row-gap:1.5rem;
+  column-gap:1.5rem;
+  background-color: white;
+  padding-bottom:2rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.details-box, svg{
+ justify-self: center;
+ align-self: center;
+ 
+}
+
+.details-box, p{
+  justify-self: flex-start;
+  align-self: center;
+  font-size:1.1rem;
+  
+}
+
+.avatar-img{
+  width:7rem;
+  border-radius: 50%;
+}
+
+.error{
+  color:red;
+  font-weight: bold;
+  position:absolute;
+  right:35%;
+  top:55%;
+}
+
+
+
+
+/******Theme toggle ****/
+
+#dark {
+  background-color: rgba(20, 29, 47, 1);
+  
+}
+
+#dark .title{
+  color:white;
+}
+
+#dark  .profile-box{
+  background-color:rgba(30, 42, 71, 1);
+ }
+
+ #dark .wrapper{
+  background-color:rgba(30, 42, 71, 1);
+ }
+
+ #dark .bio-box{
+  background-color:rgba(30, 42, 71, 1);
+ }
+
+#dark .info-box{
+  background-color: rgba(20, 29, 47, 1);
+ 
+}
+
+#dark .details-box{
+  background-color:rgba(30, 42, 71, 1);
+}
+
+#dark .info-box div{
+  color:white;
+}
+
+#dark ::placeholder{
+  color:white;
+}
+
+#dark .join-date, .login{
+  color:white;
+}
+
+#dark .details-box p{
+  color:white;
+}
+
+#dark input{
+ background-color: rgba(30, 42, 71, 1);
+ color:white;
+ font-family: 'Space Mono', monospace;
+}
+
+#dark .bio{
+  color: white;
+}
+
+#dark .dark{
+  color:white;
+}
+
+
+
+#light{
+  background-color: rgba(246, 248, 255, 1);
+}
+
+#light  .profile-box,  .details-box, .bio-box, .wrapper{
+  background-color:white;
+}
+
+#light .title{
+  color: black;
+}
+
+#light .info-box{
+  background-color:rgba(246, 248, 255, 1);
+
+ 
+}
+
+#light .repos, .followers, .following{
+  color:rgba(75, 106, 155, 1);
+}
+
+#light ::placeholder{
+  color:  rgba(75, 106, 155, 1);
+
+}
+
+#light .join-date{
+  color:  rgba(75, 106, 155, 1);
+}
+
+#light .details-box p{
+  color:  rgba(75, 106, 155, 1);
+}
+
+#light .login{
+  color:black;
+}
+
+#light .bio{
+  color: rgba(75, 106, 155, 1);
+}
+
+#light input {
+  color: rgba(75, 106, 155, 1);
+  font-family: 'Space Mono', monospace;
+}
+
+
+@media screen and (min-width:1280px){
+ 
+ body{
+    background-color: rgba(246, 248, 255, 1);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #dark {
+     background-color:  rgba(20, 29, 47, 1);
+  }
+
+  .header, .input-box, .profile-box, .wrapper, .details-box{
+    width: 60rem;
+  }
+
+  .search-input{
+    width:60rem;
+    padding-left:4rem;
+    padding-right:12rem;
+  }
+  .search-btn{
+    left:80%;
+  }
+
+  .info-box{
+    margin-left:16rem;
+    margin-right:5rem;
+  }
+
+  .bio-box{
+    padding-left:16rem;
+    padding-right:0;
+    
+  }
+  .username{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:9rem;
+  }
+
+.avatar-img{
+  margin-left:4rem;
+  margin-right: 1rem;
+  width:8rem;
+}
+
+.user-id{
+  margin-top:0.5rem;
+}
+
+.login{
+  font-size:2.2rem;
+}
+
+.details-box{
+    padding-left:16rem;
+    padding-right:5rem;
+    grid-template-columns: 20px 1fr 20px 1fr;
+    grid-template-rows: 1fr;
+    padding-bottom:3rem;
+}
+
+}
+
